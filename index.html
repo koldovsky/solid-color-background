@@ -19,9 +19,11 @@
         const colors = ['white', 'black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
         let currentIndex = 0;
 
-        document.body.addEventListener('click', function() {
-            currentIndex = (currentIndex + 1) % colors.length;
-            document.body.style.backgroundColor = colors[currentIndex];
+        document.body.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                currentIndex = (currentIndex + 1) % colors.length;
+                document.body.style.backgroundColor = colors[currentIndex];
+            }
         });
     </script>
 </body>
